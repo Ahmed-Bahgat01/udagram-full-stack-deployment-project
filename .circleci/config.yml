@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  deploy:
+    docker:
+      - image: "cimg/node:11.11"
+    steps:
+      - checkout
+
+      # download and cash dependencies
+      - restore_cash:
+          keys:
+          # you need to update package.json file path as their is 3 package.json files
+            - v1_dependencies-{{ checksum package.json }}
+            - v1_dependencies-
+      - run: 
+          name: install dependencies
+          command: npm install 
+workflows: 
+  build_deploy:
+    jobs: 
+      - deploy
