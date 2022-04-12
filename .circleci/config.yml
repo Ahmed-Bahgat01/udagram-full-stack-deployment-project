@@ -16,19 +16,19 @@ jobs:
       - run:
         - name: Front-End Install
         - command: |
-          npm run frontend:install
+            npm run frontend:install
       - run:
         - name: Back-End Install
         - command: |
-          npm run backend:install
+            npm run backend:install
       - run:
         - name: Front-End Build
         - command: |
-          npm run frontend:build
+            npm run frontend:build
       - run:
         - name: Back-End Build
         - command: |
-          npm run backend:build
+            npm run backend:build
 
   deploy:
     docker:
@@ -37,11 +37,11 @@ jobs:
       - run:
         - name: Front-End Deploy
         - command: |
-          npm run frontend:deploy
+            npm run frontend:deploy
       - run:
         - name: Back-End Deploy
         - command: |
-          npm run backend:deploy
+            npm run backend:deploy
 
 workflows:
   udagram:
