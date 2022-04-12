@@ -31,6 +31,11 @@ jobs:
     docker:
       - image: "cimg/base:stable"
     steps:
+      - node/install
+      - checkout
+      # this will go and grab your aws credentials that you have saved in circleci
+      - aws-cli/setup 
+      - eb/setup
       - run:
           name: Front-End Deploy
           command: npm run frontend:deploy
