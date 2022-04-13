@@ -14,18 +14,21 @@ jobs:
       # this will go and grab your aws credentials that you have saved in circleci
       - aws-cli/setup 
       - eb/setup
+      # install frontend and backend
       - run:
           name: Front-End Install
           command: npm run frontend:install
       - run:
           name: Back-End Install
           command: npm run backend:install
+      # build frontend and backend
       - run:
           name: Front-End Build
           command: npm run frontend:build
       - run:
           name: Back-End Build
           command: npm run backend:build
+      # deploy frontend and backend
       - run:
           name: Front-End Deploy
           command: npm run frontend:deploy
