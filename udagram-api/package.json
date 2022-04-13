@@ -10,8 +10,8 @@
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "eb use udagram-api-dev && eb deploy udagram-api-dev && eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB DB_PORT=$DB_PORT PORT=$PORT POSTGRES_HOST=$POSTGRES_HOST AWS_REGION=$AWS_REGION AWS_PROFILE=$AWS_PROFILE AWS_BUCKET=$AWS_BUCKET URL=$URL JWT_SECRET=$JWT_SECRET AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION"
+    "test": "echo \"no test specified for backend\"",
+    "deploy": "aws s3 cp ./www/Archive.zip $AWS_SOURCE_CODE_BUCKET && aws elasticbeanstalk create-application-version --application-name $ELASTIC_BEANSTALK_APP_NAME --version-label $(git log -1 --pretty=%h) --source-bundle S3Bucket=$AWS_SOURCE_S3BUCKET,S3Key=Archive.zip --auto-create-application && aws elasticbeanstalk update-environment --application-name $ELASTIC_BEANSTALK_APP_NAME --environment-name $ELASTIC_BEANSTALK_ENV --version-label $(git log -1 --pretty=%h)"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
