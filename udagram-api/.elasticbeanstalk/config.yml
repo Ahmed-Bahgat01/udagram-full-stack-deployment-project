@@ -1,15 +1,19 @@
 branch-defaults:
   default:
-    environment: $ELASTIC_BEANSTALK_ENV
+    environment: udagram-api-dev
     group_suffix: null
 deploy:
   artifact: www/Archive.zip
+environment-defaults:
+  udagram-api-dev:
+    branch: null
+    repository: null
 global:
-  application_name: $ELASTIC_BEANSTALK_APP_NAME
+  application_name: udagram-api
   branch: null
   default_ec2_keyname: null
-  default_platform: $ELASTIC_BEANSTALK_PLATFORM
-  default_region: $AWS_REGION
+  default_platform: Node.js
+  default_region: us-east-1
   include_git_submodules: true
   instance_profile: null
   platform_name: null
