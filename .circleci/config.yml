@@ -28,7 +28,19 @@ jobs:
       - run:
           name: Back-End Build
           command: npm run backend:build
+      
+      # NOTE !!!! : Not doing test before deployment is bad,
+            # but it's not our focus in this project 
+            # to test the code
+
+      # - run:
+      #     name: Front-End Test
+      #     command: npm run frontend:test
+      # - run:
+      #     name: Back-End Test
+      #     command: npm run backend:test
       # deploy frontend and backend
+      
       - run:
           name: Front-End Deploy
           command: npm run frontend:deploy
