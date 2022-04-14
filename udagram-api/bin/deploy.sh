@@ -9,7 +9,7 @@ aws elasticbeanstalk create-application-version \
 --auto-create-application 
 
 # eb init
-eb init udagram-api --platform node.js --region us-east-1 --environment $ELASTIC_BEANSTALK_ENV
+eb init udagram-api --platform node.js --region us-east-1
 
 # use env
 eb use $ELASTIC_BEANSTALK_ENV
