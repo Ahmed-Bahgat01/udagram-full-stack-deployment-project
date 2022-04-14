@@ -35,7 +35,7 @@ Pipeline is automating the process of taking code from version controle and maki
   - **build** 
   - **test**
   - **deploy to production**
-  ![for visually impaired reviewer](./SCREENSHOTS/pipeline-steps.png)
+  ![big big picture for reviewer](./SCREENSHOTS/pipeline-steps.png)
 ### The Big Picture
 ![the big picture](./SCREENSHOTS/D-the-big-picture.png)
 so shortly developer push code then pipeline starts deploying App on aws services so that end user can use the service
