@@ -36,11 +36,3 @@ AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
 ELASTIC_BEANSTALK_ENV=$ELASTIC_BEANSTALK_ENV \
 ELASTIC_BEANSTALK_APP_NAME=$ELASTIC_BEANSTALK_APP_NAME \
 ELASTIC_BEANSTALK_PLATFORM=$ELASTIC_BEANSTALK_PLATFORM
-
-
-
-# # update environment
-# aws elasticbeanstalk update-environment \
-# --application-name $ELASTIC_BEANSTALK_APP_NAME \
-# --environment-name $ELASTIC_BEANSTALK_ENV \
-# --version-label $(git log -1 --pretty=%h)
