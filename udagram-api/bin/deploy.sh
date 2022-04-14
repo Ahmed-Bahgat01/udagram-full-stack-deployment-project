@@ -8,6 +8,9 @@ aws elasticbeanstalk create-application-version \
 --source-bundle S3Bucket=$AWS_SOURCE_S3BUCKET,S3Key=Archive.zip \
 --auto-create-application 
 
+# eb init
+eb init udagram-api --platform node.js --region us-east-1 --environment $ELASTIC_BEANSTALK_ENV
+
 # use env
 eb use $ELASTIC_BEANSTALK_ENV
 
