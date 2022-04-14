@@ -9,7 +9,7 @@ aws elasticbeanstalk create-application-version \
 --auto-create-application 
 
 # set envrionment variables
-aws elasticbeanstalk setenv POSTGRES_USERNAME=$POSTGRES_USERNAME \
+eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME \
 POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
 POSTGRES_DB=$POSTGRES_DB \
 POSTGRES_HOST=$POSTGRES_HOST \
